@@ -1,0 +1,34 @@
+{
+  "name": "Discordbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "ts-node-dev src/index.ts",
+    "prod": "node dist/index.js",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamshoXy/Discordbot.git"
+  },
+  "keywords": [],
+  "author": "iamshoXy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iamshoXy/Discordbot/issues"
+  },
+  "homepage": "https://github.com/iamshoXy/Discordbot#readme",
+  "dependencies": {
+    "discord.js": "^13.3.1",
+    "dotenv": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/node": "^16.11.9",
+    "ts-node": "^10.4.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.2"
+  }
+}
