@@ -2,6 +2,7 @@ require("dotenv").config();
 
 import { Client, Intents } from 'discord.js';
 import fs from 'fs';
+import chalk from 'chalk';
 
 class Discordbot extends Client {
     public constructor() {
@@ -18,6 +19,8 @@ class Discordbot extends Client {
                 const eventName = file.substring(0, file.lastIndexOf('.'));
                 super.on(eventName, event[eventName]);
             });
+
+            console.log(chalk.green(`[EVENTS]`), `Successfully loaded ${files.length} event(s)`);
         });
 
         super.login(process.env.token);
