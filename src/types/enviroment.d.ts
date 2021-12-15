@@ -3,6 +3,7 @@ declare global {
 		interface ProcessEnv {
 			token: string;
 			guild: string;
+			prefix: string;
 		}
 	}
 }
