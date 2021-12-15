@@ -3,6 +3,7 @@ require("dotenv").config();
 import { Client, Intents } from 'discord.js';
 import fs from 'fs';
 import chalk from 'chalk';
+import * as CommandHandler from './struct/CommandHandler';
 
 class Discordbot extends Client {
     public constructor() {
@@ -22,6 +23,8 @@ class Discordbot extends Client {
 
             console.log(chalk.green(`[EVENTS]`), `Successfully loaded ${files.length} event(s)`);
         });
+
+        CommandHandler.loadCommands();
 
         super.login(process.env.token);
     }
