@@ -16,8 +16,8 @@ export async function loadCommands() {
             commands.push(command);
         }
 
-        console.log(chalk.green(`[COMMANDS]`), `Successfully loaded ${files.length} command(s)`);
-    }).catch((e)=>{
+        console.log(chalk.green('[COMMANDS]'), `Successfully loaded ${files.length} command(s)`);
+    }).catch((e) => {
         console.log(e.message);
     });
 }
@@ -26,7 +26,7 @@ export function execute(cmdName: String, message: Message, args: String[]) : voi
     const command = commands.find(c => c.commandName == cmdName);
 
     if (command) {
-        command.execute(args);
+        command.execute(cmdName, message, args);
     } else {
         message.reply(`There\'s no command called ${cmdName}.`);
     }

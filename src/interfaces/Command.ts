@@ -1,4 +1,6 @@
+import { Message } from "discord.js";
+
 export interface Command {
     commandName: String
-    execute(args?: String[])
+    execute(cmdName: String, message: Message, args?: String[])
 }
