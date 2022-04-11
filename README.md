@@ -4,7 +4,7 @@ A simple Discordbot in TypeScript which should include features like a leaderboa
 
 ## TODO
 
-* [] Welcome message
+* [x] Welcome message
 * [] Administration and moderation commands like ban, kick and warn
 * [] Level system with a Leaderboard connected to a database
 * [] Minigames
