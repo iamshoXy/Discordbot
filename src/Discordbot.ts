@@ -10,6 +10,7 @@ class Discordbot extends Client {
     public constructor() {
         var options = {
             intents: [
+                Intents.FLAGS.GUILD_MEMBERS,
                 Intents.FLAGS.GUILDS,
                 Intents.FLAGS.GUILD_MESSAGES
             ]
