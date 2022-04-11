@@ -26,7 +26,7 @@ export function execute(cmdName: String, message: Message, args: String[]) : voi
     const command = commands.find(c => c.commandName == cmdName);
 
     if (command) {
-        command.execute(cmdName, message, args);
+        command.execute(message, args);
     } else {
         message.reply(`There\'s no command called ${cmdName}.`);
     }
