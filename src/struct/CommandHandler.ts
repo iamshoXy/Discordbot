@@ -9,7 +9,7 @@ var commands = [] as Command[];
 const globPromisify = promisify(glob)
 
 export async function loadCommands() {
-    const dir_root = path.join(__dirname, '../commands/'), pattern = path.join(dir_root, '*.ts');
+    const dir_root = path.join(__dirname, '../commands/**'), pattern = path.join(dir_root, '*.ts');
     globPromisify(pattern).then(async (files)=> {
         for (const file of files) {
             const command = await import(file) as Command
