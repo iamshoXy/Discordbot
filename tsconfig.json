@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
         "lib": ["ESNext"],
+        "baseUrl": "./src",
         "module": "commonjs",
         "moduleResolution": "node",
         "target": "es6",
