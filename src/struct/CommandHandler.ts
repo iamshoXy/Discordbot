@@ -3,7 +3,7 @@ import glob from 'glob';
 import path from 'path';
 import { promisify } from 'util';
 import { Command } from '../interfaces/Command';
-import { Message} from 'discord.js';
+import { Message } from 'discord.js';
 
 var commands = [] as Command[];
 const globPromisify = promisify(glob)
