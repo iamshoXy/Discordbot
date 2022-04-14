@@ -2,7 +2,7 @@ declare global {
 	namespace NodeJS {
 		interface ProcessEnv {
 			token: string;
-			guild: string;
+			mongo_uri: string;
 			prefix: string;
 		}
 	}
