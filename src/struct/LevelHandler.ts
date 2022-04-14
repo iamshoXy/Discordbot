@@ -1,3 +1,4 @@
+import { Message } from "discord.js";
 import User from "../models/user";
 
 async function getUser(authorId: string) {
@@ -15,22 +16,23 @@ async function getUser(authorId: string) {
     return user;
 }
 
-export async function addEXP(authorId: string, exp: number) {
-    let user = await getUser(authorId);
+export async function addEXP(message: Message, exp: number) {
+    let user = await getUser(message.author.id);
     if (user == null) throw new Error("No user could be found.");
 
     let totalEXP = user.totalEXP;
     totalEXP += exp;
 
     await User.findOneAndUpdate({
-        authorId: authorId
+        authorId: message.author.id
     }, {
         totalEXP: totalEXP
     });
 
     let requiredEXP = await getRequiredEXP(user.level);
     if (totalEXP >= requiredEXP) {
-        await addLevel(authorId);
+        let newLevel = await addLevel(message.author.id);
+        message.reply(`You ranked up! New level: **${newLevel}**`);
     }
 }
 
@@ -46,6 +48,8 @@ export async function addLevel(authorId: string) {
     }, {
         level: currentLevel
     });
+
+    return currentLevel;
 }
 
 export async function getLevel(authorId: string): Promise<number> {
