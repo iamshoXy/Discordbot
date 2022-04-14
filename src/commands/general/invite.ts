@@ -1,5 +1,5 @@
 import { Message } from 'discord.js';
-import { Command } from '../interfaces/Command';
+import { Command } from 'interfaces/Command';
 
 const command: Command = {
     commandName: 'invite',
