@@ -15,4 +15,5 @@ A simple Discordbot in TypeScript which should include features like a leaderboa
 ## Environment variables
 
 - TOKEN - Discord bot token
+- MONGO_URI - MongoDB connection URI
 - PREFIX - The prefix over which the commands react
