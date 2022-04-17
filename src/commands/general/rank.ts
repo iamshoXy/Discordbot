@@ -1,5 +1,6 @@
 import { Message } from 'discord.js';
 import { Command } from 'interfaces/Command';
+import { createRankImage } from '../../struct/ImageHandler';
 import { getLevel, getTotalEXP, getLeaderboardPosition, getRequiredEXP } from '../../struct/LevelHandler';
 
 const command: Command = {
@@ -10,7 +11,7 @@ const command: Command = {
         const totalEXP = await getTotalEXP(message.author.id);
         const requiredEXP = await getRequiredEXP(currentLevel);
 
-        message.reply(`Your level: **${currentLevel}** - Leaderboard rank: **#${position}** - EXP: **${totalEXP}/${requiredEXP}**`)
+        createRankImage(message, position, currentLevel, totalEXP, requiredEXP);
     }
 };
 
