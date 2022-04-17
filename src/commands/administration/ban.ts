@@ -1,4 +1,4 @@
-import { Message } from 'discord.js';
+import { Message, Permissions } from 'discord.js';
 import { Command } from 'interfaces/Command';
 import { getUserFromMention } from '../../utils/getUserFromMention';
 import parse from 'parse-duration';
@@ -6,6 +6,8 @@ import parse from 'parse-duration';
 const command: Command = {
     commandName: 'ban',
     async execute(message: Message, args: string[]) {
+        if (!message.member.permissions.has(Permissions.FLAGS.BAN_MEMBERS)) return;
+
         const user = await getUserFromMention(message.guild, args[0]);
         if (!user) {
             message.reply('The mentioned user could not be found.');
